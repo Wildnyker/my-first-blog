@@ -23,4 +23,6 @@ class Post(models.Model):
 
 # makemigrations
 
-#admin.site.register(Post)
+#in admin.py add admin.site.register(Post)
+
+#we also need to import our models to views
