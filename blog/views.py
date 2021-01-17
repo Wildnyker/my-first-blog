@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
@@ -13,3 +14,8 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts':posts}) # function
     #takes request and fill return the value produced by render (will put together template blog/post_list.html)
     # {'posts':posts} allows to send it as the answer to users request
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk) # will get a page with id of this page
+    #which is geiven to object automaticly, or 404 error page
+    return render(request, 'blog/post_detail.html', {'post': post})
