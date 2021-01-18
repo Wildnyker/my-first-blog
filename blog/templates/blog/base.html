@@ -6,12 +6,16 @@
     <title>My blog</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 
 </head>
 <body>
     <div class="page-header">
+        {% if user.is_authenticated %} <!--Checks if user is authenticated-->
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">NEW POST</span></a><!--adds link to our form(creating new post), after it we need to add url-->
+        {% endif %}
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
     <div class="content container">

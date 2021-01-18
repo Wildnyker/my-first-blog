@@ -11,6 +11,8 @@
             <h2><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h2> <!--adding
             a link to detailed post info, after this we need to make url for this link-->
             <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+            </div>
     {% endfor %}
+
+
 {% endblock %}
